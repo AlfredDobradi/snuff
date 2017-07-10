@@ -3,19 +3,11 @@
 
 name = "Snuff"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
 description = ""
-homepage = "http://siteforthistheme.com/"
-tags = ["", ""]
-features = ["", ""]
+homepage = "https://github.com/AlfredDobradi/snuff"
+tags = ["horror", "minimalist", "album"]
 min_version = 0.17
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Alfred Dobradi"
+  homepage = "https://github.com/AlfredDobradi"

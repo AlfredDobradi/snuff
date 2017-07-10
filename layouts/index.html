@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ .Title }}</title>
+
+	<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+	<link href="/css/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<header>
+	<h1>{{ .Title }}</h1>
+	{{ with .Site.Params.Subtitle }}<h2>{{ . }}</h2>{{ end }}
+</header>
+
+<div class="movies">
+	{{- range .Data.Pages }}
+		{{- if eq .Type "movie" }}
+    	<article class="movie" style="background-image: url(/images/{{ .Params.Poster }});">
+			<a href="{{ .Permalink }}">{{ .Title }}</a>
+		</article>
+    	{{- end }}
+  	{{- end }}
+</div>
+
+</body>
+</html>
