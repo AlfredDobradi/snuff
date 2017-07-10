@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>{{ .Title }}</title>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab" rel="stylesheet">
 	<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
 	<link href="/css/app.css" rel="stylesheet" type="text/css" />
@@ -39,7 +39,7 @@
 	{{- range .Data.Pages }}
 		{{- if eq .Type "movie" }}
     	<article class="movie" style="background-image: url(/images/{{ .Params.Slug }}.jpg);">
-			<a href="{{ .Permalink }}" class="meta">
+			<a href="{{ .Params.Rt }}" target="_blank" class="meta">
                 <span>{{ .Title }}</span>
             </a>
 		</article>
