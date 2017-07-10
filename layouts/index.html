@@ -2,25 +2,54 @@
 <html>
 <head>
 	<title>{{ .Title }}</title>
-
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab" rel="stylesheet">
 	<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
 	<link href="/css/app.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<header>
+<header class="main">
 	<h1>{{ .Title }}</h1>
 	{{ with .Site.Params.Subtitle }}<h2>{{ . }}</h2>{{ end }}
+</header>
+
+<header class="sub">
+    <h3>The blog</h3>
+</header>
+
+<div class="blog">
+    {{- range .Data.Pages }}
+        {{- if eq .Type "post" }}
+        <article class="post">
+            <h4 class="title">
+                <a href="{{ .Permalink }}" alt="{{ .Title }}" title="{{ .Title }}">{{ .Title }}</a> <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+            </h4>
+            <p>{{ .Summary }}</p>
+        </article>
+        {{- end }}
+    {{- end }}
+</div>
+
+
+<header class="sub">
+    <h3>The movies</h3>
 </header>
 
 <div class="movies">
 	{{- range .Data.Pages }}
 		{{- if eq .Type "movie" }}
-    	<article class="movie" style="background-image: url(/images/{{ .Params.Poster }});">
-			<a href="{{ .Permalink }}">{{ .Title }}</a>
+    	<article class="movie" style="background-image: url(/images/{{ .Params.Slug }}.jpg);">
+			<a href="{{ .Permalink }}" class="meta">
+                <span>{{ .Title }}</span>
+            </a>
 		</article>
     	{{- end }}
   	{{- end }}
 </div>
+
+<footer>
+The movie posters are from IMDb. Pls don't sue me lol.
+</footer>
 
 </body>
 </html>

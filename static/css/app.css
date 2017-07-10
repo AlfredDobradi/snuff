@@ -1,7 +1,37 @@
 body {
-	background: #EFEFEF;
-	color: #222222;
+	background: #222222;
+	color: #EFEFEF;
 }
+
+header {
+	font-family: 'Roboto', Helvetica, Verdana, Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+header h1, header h3 {
+	text-transform: uppercase;
+	margin: 10px 0 0;
+	text-align: center;
+}
+
+header.main h1 {
+	font-size: 62px;
+	text-shadow: 5px 5px #A60000;
+}
+header.main h2 {
+	margin: 0;
+	color: #AAAAAA;
+}
+
+header.sub {
+	margin-top: 30px;
+}
+header.sub h3 {
+	font-size: 40px;
+	text-shadow: 2px 2px #A60000;
+}
+
 
 .movies {
 	display: flex;
@@ -12,17 +42,79 @@ body {
 .movie {
 	width: 300px;
 	height: 400px;
-	margin: auto;
+	margin: 10px auto 0;
 	background-repeat: none;
-	background-position: top left;
-	background-size: 100% 100%;
+	background-position: top center;
+	background-size: cover;
 	position: relative;
 }
 
-.movie a {
+.movie .meta {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
+	display: flex;
+	text-decoration: none;
+	outline: none;
+}
+
+.movie .meta:hover {
+	background: rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+.movie .meta:hover span {
+	color: #EFEFEF;
+	display: inline;
+}
+
+.movie .meta span {
+	align-self: center;
+	color: #222222;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 1px 2px #c60000;
+	font-size: 26px;
+	font-family: 'Roboto', Helvetica, Verdana, Arial, sans-serif;
+	margin: 0 auto;
+	text-align: center;
+	display: none;
+}
+
+.blog {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.blog .post h4.title {
+	margin: 1.5em 0 1em;
+}
+.blog .post h4.title a {
+	text-decoration: none;
+	font-size: 24px;
+	font-family: 'Roboto', Helvetica, Verdana, Arial, sans-serif;
+	text-transform: uppercase;
+	color: #EFEFEF;
+	text-shadow: 2px 2px #A60000;
+}
+.blog .post p {
+	margin: 0;
+	line-height: 30px;
+	letter-spacing: 0.7px;
+	font-family: 'Zilla Slab', serif;
+	font-size: 20px;
+}
+.blog .post h4.title .date {
+	color: #AAAAAA;
+	font-size: 18px;
+}
+
+
+footer {
+	padding: 10px 0;
+	text-align: center;
+	font-family: 'Roboto', Helvetica, Verdana, Arial, sans-serif;
 }
