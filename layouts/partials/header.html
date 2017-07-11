@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ .Title }}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab" rel="stylesheet">
+	<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+	<link href="/css/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<header class="main">
+	<h1><a href="{{ .Site.BaseURL }}" target="_self">{{ .Site.Title }}</a></h1>
+	{{ with .Site.Params.Subtitle }}<h2>{{ . }}</h2>{{ end }}
+</header>
