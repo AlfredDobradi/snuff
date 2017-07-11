@@ -65,32 +65,48 @@ header.sub h3 {
 	cursor: pointer;
 }
 
-.movie .meta:hover span {
+.movie .meta:hover div {
 	color: #EFEFEF;
-	display: inline;
+	display: block;
 }
 
-.movie .meta span {
+.movie .meta div {
 	align-self: center;
 	color: #222222;
 	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: bold;
-	text-shadow: 1px 2px #c60000;
-	font-size: 26px;
 	font-family: 'Roboto', Helvetica, Verdana, Arial, sans-serif;
 	margin: 0 auto;
 	text-align: center;
 	display: none;
+	width: 90%;
+}
+
+.movie .meta div span {
+	display: block;
+}
+
+.movie .meta div span.title {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 1px 2px #c60000;
+	font-size: 26px;
+}
+
+.movie .meta div span.data {
+	margin-top: 15px;
+	font-size: 16px;
+	color: #CCCCCC;
 }
 
 .blog {
-	width: 960px;
-	margin: 0 auto;
+	max-width: 860px;
+	min-width: 300px;
+	padding: 0 50px;
+	margin: 0 auto 50px;
 }
 
 .blog .post h4.title {
-	margin: 1.5em 0 1em;
+	margin: 1em 0 1em;
 }
 .blog .post h4.title a {
 	text-decoration: none;
@@ -100,16 +116,17 @@ header.sub h3 {
 	color: #EFEFEF;
 	text-shadow: 2px 2px #A60000;
 }
+.blog .post h4.title .date {
+	color: #AAAAAA;
+	font-size: 18px;
+	margin-left: 10px;
+}
 .blog .post p {
 	margin: 0;
 	line-height: 30px;
 	letter-spacing: 0.7px;
 	font-family: 'Zilla Slab', serif;
 	font-size: 20px;
-}
-.blog .post h4.title .date {
-	color: #AAAAAA;
-	font-size: 18px;
 }
 
 
