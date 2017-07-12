@@ -1,39 +1,7 @@
 {{ partial "header.html" . }}
 
-<header class="sub">
-    <h3>The blog</h3>
-</header>
+{{ partial "movies.html" . }}
 
-<div class="blog">
-    {{- range .Data.Pages }}
-        {{- if eq .Type "post" }}
-        <article class="post">
-            <h4 class="title">
-                <a href="{{ .Permalink }}" alt="{{ .Title }}" title="{{ .Title }}">{{ .Title }}</a> <span class="date">{{ .Date.Format "2006-01-02" }}</span>
-            </h4>
-            <div>{{ .Summary }}</div>
-        </article>
-        {{- end }}
-    {{- end }}
-</div>
-
-<header class="sub">
-    <h3>The movies</h3>
-</header>
-
-<div class="movies">
-	{{- range (shuffle .Data.Pages) }}
-		{{- if eq .Type "movie" }}
-    	<article class="movie" style="background-image: url(/images/{{ .Params.Slug }}.jpg);">
-			<a href="{{ .Params.Rt }}" target="_blank" class="meta">
-                <div>
-                    <span class="title">{{ .Title }}</span>
-                    <span class="data">{{ .Params.Date_watched }}</span>
-                </div>
-            </a>
-		</article>
-    	{{- end }}
-  	{{- end }}
-</div>
+{{ partial "blog.html" . }}
 
 {{ partial "footer.html" . }}

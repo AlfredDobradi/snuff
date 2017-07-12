@@ -1,0 +1,23 @@
+<header class="sub">
+    <h3 id="the-blog-title">The blog</h3>
+    <a class="nav" href="{{ .Permalink }}#the-movies-title">Show me the movies!</a>
+</header>
+
+<div class="blog">
+    {{- range .Data.Pages }}
+        {{- if eq .Type "post" }}
+        <article class="post">
+            <h4 class="title">
+                <a href="{{ .Permalink }}" alt="Read {{ .Title }}" title="Read {{ .Title }}">{{ .Title }}</a> <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+            </h4>
+            <div>
+            {{ .Summary }}
+
+            {{ if .Truncated }}
+                <a href="{{ .Permalink }}" alt="Read {{ .Title }}" title="Read {{ .Title }}">Read more &raquo;</a>
+            {{ end }}
+            </div>
+        </article>
+        {{- end }}
+    {{- end }}
+</div>

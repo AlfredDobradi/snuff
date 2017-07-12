@@ -35,7 +35,10 @@ header.sub h3 {
 	font-size: 40px;
 	text-shadow: 2px 2px #A60000;
 }
-
+header.sub a.nav {
+	color: #A60000;
+	text-decoration: none;
+}
 
 .movies {
 	display: flex;
@@ -136,12 +139,13 @@ header.sub h3 {
 	font-family: 'Zilla Slab', serif;
 	font-size: 20px;
 }
-.blog .post div ol {
+.blog .post div ol, .blog .post div ul {
 	font-size: 18px;
 	line-height: 26px;
+	margin-top: 5px;
 }
 .blog .post div p {
-	margin: 5px 0;
+	margin: 15px 0 0;
 }
 .blog .post div a {
 	color: #A60000;

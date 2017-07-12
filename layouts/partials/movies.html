@@ -1,0 +1,19 @@
+<header class="sub">
+    <h3 id="the-movies-title">The movies</h3>
+    <a class="nav" href="{{ .Permalink }}#the-blog-title">Show me the blog!</a>
+</header>
+
+<div class="movies">
+	{{- range (shuffle .Data.Pages) }}
+		{{- if eq .Type "movie" }}
+    	<article class="movie" style="background-image: url(/images/{{ .Params.Slug }}.jpg);">
+			<a href="{{ .Params.Rt }}" target="_blank" class="meta">
+                <div>
+                    <span class="title">{{ .Title }}</span>
+                    <span class="data">{{ .Params.Date_watched }}</span>
+                </div>
+            </a>
+		</article>
+    	{{- end }}
+  	{{- end }}
+</div>
