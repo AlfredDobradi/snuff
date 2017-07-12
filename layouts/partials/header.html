@@ -6,6 +6,16 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab" rel="stylesheet">
 	<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
 	<link href="/css/app.css" rel="stylesheet" type="text/css" />
+
+    {{ with .Site.Params.Adsense }}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "{{ . }}",
+        enable_page_level_ads: true
+      });
+    </script>
+    {{ end }}
 </head>
 <body>
 <header class="main">
