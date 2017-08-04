@@ -3,6 +3,18 @@
 <head>
 	<title>{{ .Title }}</title>
 
+	<meta name="description" content="{{ .Site.Params.Meta.Description }}" />
+	<meta name="author" content="{{ .Site.Params.Meta.Author }}" />
+	<meta name="charset" content="UTF-8" />
+
+	<meta name="og:title" content="{{ .Title }}" />
+	<meta name="og:description" content="{{ .Site.Params.Meta.Description }}" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="{{ .Site.Params.Meta.Twitter }}" />
+	<meta name="twitter:title" content="{{ .Title }}" />
+	<meta name="twitter:description" content="{{ truncate 120 .Summary }}" />
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab" rel="stylesheet">
 	<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
 	<link href="/css/app.css" rel="stylesheet" type="text/css" />
